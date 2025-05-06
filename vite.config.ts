@@ -2,9 +2,16 @@ import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
+import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
+// Ensure public directory exists
+const publicDir = path.resolve(__dirname, 'public')
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true })
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -18,9 +25,12 @@ export default defineConfig(({ mode }) => {
   
   console.log('Mode:', mode)
   console.log('Base URL:', baseUrl)
+  console.log('Output Directory:', publicDir)
   
   return {
     plugins: [react()],
+    base: './',
+    publicDir: false, // Disable copying public directory
     optimizeDeps: {
       include: [
         'react',
@@ -45,10 +55,11 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      outDir: 'dist',
+      outDir: publicDir,
       assetsDir: 'assets',
       sourcemap: !isProd,
       minify: 'terser',
+      emptyOutDir: true,
       terserOptions: {
         compress: {
           drop_console: isProd,
@@ -56,6 +67,9 @@ export default defineConfig(({ mode }) => {
         }
       },
       rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+        },
         output: {
           manualChunks: {
             vendor: ['react', 'react-dom', 'react-router-dom'],
@@ -65,8 +79,8 @@ export default defineConfig(({ mode }) => {
           },
           chunkFileNames: isProd ? 'assets/[name].[hash].js' : 'assets/[name].js',
           assetFileNames: isProd ? 'assets/[name].[hash].[ext]' : 'assets/[name].[ext]'
-        },
-      },
+        }
+      }
     },
     server: {
       port: 4173,
