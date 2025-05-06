@@ -1,0 +1,73 @@
+{
+  "orders": [
+    {
+      "id": "order_1743093835599",
+      "userId": "1743511672144",
+      "items": [
+        {
+          "id": "1743083935289",
+          "productId": "1743083935289",
+          "name": "Silk ",
+          "quantity": 1,
+          "price": 1,
+          "image": "cotton-saree-1.jpg"
+        }
+      ],
+      "total": 1,
+      "shippingAddress": {
+        "fullName": "SURESH KANCHI",
+        "email": "soorihai@gmail.com",
+        "phone": "9705059370",
+        "address": "F no 104 b block yelukuru heights\nulchala road  near radio station",
+        "city": "KURNOOL",
+        "state": "Andhra Pradesh",
+        "pincode": "518003",
+        "country": "India"
+      },
+      "razorpayOrderId": "order_QBsvh3oucBVFjR",
+      "paymentStatus": "completed",
+      "status": "processing",
+      "createdAt": "2025-03-27T16:43:55.599Z",
+      "updatedAt": "2025-03-27T16:44:29.975Z",
+      "razorpayPaymentId": "pay_QBsw6C6uMa2Mcx",
+      "razorpaySignature": "ac5fda3ae9b4ab87712f249ddd05c2a17624d6696fc7c24323178d6b9a4fbe17",
+      "customerId": "1743511672144",
+      "customerName": "SURESH KANCHI",
+      "customerEmail": "soorihai@gmail.com",
+      "customerPhone": "9705059370"
+    },
+    {
+      "id": "3b2e4d72-78a0-4232-87cb-5ca0f44657d3",
+      "items": [
+        {
+          "id": "1744177015989",
+          "name": "Silk Saree",
+          "image": "1744177026364-922222332.jpg",
+          "quantity": 1,
+          "price": 1
+        }
+      ],
+      "total": 1,
+      "shippingAddress": {
+        "fullName": "SURESH KANCHI",
+        "email": "soorihai@gmail.com",
+        "phone": "9705059370",
+        "address": "F no 104 b block yelukuru heights\nulchala road  near radio station",
+        "city": "KURNOOL",
+        "state": "Andhra Pradesh",
+        "pincode": "518003",
+        "country": "India"
+      },
+      "status": "pending",
+      "paymentStatus": "pending",
+      "razorpayOrderId": "order_QGs2YkJd7iNUuR",
+      "createdAt": "2025-04-09T07:06:44.532Z",
+      "orderDate": "2025-04-09T07:06:44.532Z",
+      "userId": "1744274347043",
+      "customerId": "1744274347043",
+      "customerName": "SURESH KANCHI",
+      "customerEmail": "soorihai@gmail.com",
+      "customerPhone": "9705059370"
+    }
+  ]
+}
